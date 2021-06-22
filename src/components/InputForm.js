@@ -10,6 +10,7 @@ const InputForm = ({
   currentId,
   setCurrentId,
   setFilter,
+  refContainer,
 }) => {
   // obtains user input as text
   const handleChange = (e) => {
@@ -62,12 +63,17 @@ const InputForm = ({
         placeholder="enter value"
         value={toDo}
         onChange={handleChange}
+        ref={refContainer}
       />
       <button type="submit" value="submit" onClick={handleSubmit}>
         submit
       </button>
-      <div>
-        <select onChange={handleFilter} name="toDoItems">
+      <div className="select">
+        <select
+          onChange={handleFilter}
+          name="toDoItems"
+          className="filter-to-do"
+        >
           <option value="all"> all </option>
           <option value="completed"> completed </option>
           <option value="not-completed"> not-completed </option>

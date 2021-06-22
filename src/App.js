@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import ToDoList from "./components/ToDoList";
 import InputForm from "./components/InputForm";
+import "./App.css";
 
 function App() {
   // UseStates
@@ -9,6 +10,8 @@ function App() {
   const [editing, setEditing] = useState(false);
   const [currentId, setCurrentId] = useState(null);
   const [filter, setFilter] = useState("all");
+  // UseRef
+  const refContainer = useRef(null);
   // functions
   //  const removeItem = (id)
 
@@ -44,10 +47,14 @@ function App() {
       })
     );
   };
-
+  useEffect(() => {
+    refContainer.current.focus();
+  });
   return (
     <>
-      <h2>Hello</h2>
+      <header>
+        <h1>To-Do-List</h1>
+      </header>
       {/* Input from the user that adds a new todo item */}
       <InputForm
         setToDo={setToDo}
@@ -59,6 +66,7 @@ function App() {
         currentId={currentId}
         setCurrentId={setCurrentId}
         setFilter={setFilter}
+        refContainer={refContainer}
       />
 
       {/* todo list that displays all the todo items */}
