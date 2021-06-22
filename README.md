@@ -6,3 +6,15 @@
 *delete any task, using the mouse or keyboard.
 *edit any task, using the mouse or keyboard.
 *view a specific subset of tasks: all, completed, not-completed
+
+ Markup : * Bullet list
+              * Nested bullet
+                  * Sub-nested bullet etc
+          * Bullet list item 2
+
+-OR-
+
+ Markup : - Bullet list
+              - Nested bullet
+                  - Sub-nested bullet etc
+          - Bullet list item 2 
